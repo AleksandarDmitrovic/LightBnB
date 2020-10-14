@@ -36,7 +36,7 @@ const getUserWithId = function(id) {
   SELECT * FROM users
   WHERE users.id = $1;
   `, [id])
-  .then(res => res.rows[0])
+  .then(res => res.rows[0]);
 }
 exports.getUserWithId = getUserWithId;
 
@@ -52,7 +52,7 @@ const addUser =  function(user) {
   VALUES ($1, $2, $3)
   RETURNING *;
   `, [user.name, user.email, user.password])
-  .then(res => res.rows[0])
+  .then(res => res.rows[0]);
 }
 exports.addUser = addUser;
 
@@ -64,7 +64,19 @@ exports.addUser = addUser;
  * @return {Promise<[{}]>} A promise to the reservations.
  */
 const getAllReservations = function(guest_id, limit = 10) {
-  return getAllProperties(null, 2);
+  return pool.query(`
+  SELECT res.* , prop.*, AVG(rating) AS average_rating
+  FROM reservations res
+  JOIN properties prop ON  res.property_id = prop.id
+  JOIN property_reviews revs ON res.id = revs.reservation_id 
+  WHERE revs.guest_id = $1
+  AND res.end_date < now()::date
+  GROUP BY res.id, prop.id
+  ORDER BY res.start_date
+  LIMIT $2;
+  `, [guest_id, limit])
+  .then(res => res.rows);
+
 }
 exports.getAllReservations = getAllReservations;
 
