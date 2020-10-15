@@ -4,7 +4,8 @@ $(() => {
   function createListing(property, isReservation) {
     return `
     <article class="property-listing">
-        <section class="property-listing__preview-image">
+    <section class="property-listing__preview-image">
+    <form action="/api/make-reservation" method="post" class="new-reservation-form">
           <img src="${property.thumbnail_photo_url}" alt="house">
         </section>
         <section class="property-listing__details">
@@ -20,11 +21,26 @@ $(() => {
           <footer class="property-listing__footer">
             <div class="property-listing__rating">${Math.round(property.average_rating * 100) / 100}/5 stars</div>
             <div class="property-listing__price">$${property.cost_per_night/100.0}/night</div>
+            <div class="reservations">
+            <label for='newResoStart'>Start Date</label>
+            <input type='date' name='newResoStart'>
+            <br>
+            <label for='newResoEnd'>End Date</label>
+            <input type='date' name='newResoEnd'>
+            <button id='reso' type='submit'>Make Reservation</button></div>
           </footer>
+          </form>
         </section>
       </article>
     `
   }
+  
+  // const res = createListing();
+
+  // res.on('submit', function (event) {
+  //   event.preventDefault();
+  
+  // })
 
   window.propertyListing.createListing = createListing;
 

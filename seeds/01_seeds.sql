@@ -4,9 +4,9 @@ VALUES ('Eva Stanley', 'evastanley@gmail.com','$2a$10$FB/BOAVhpuLvpOREQVmvmezD4E
 ('Dominic Parks', 'dominicparks@gmail.com','$2a$10$FB/BOAVhpuLvpOREQVmvmezD4ED/.JBIDRh70tGevYzYzQgFId2u');
 
 INSERT INTO properties (owner_id, title, description, thumbnail_photo_url,cover_photo_url,cost_per_night,parking_spaces,number_of_bathrooms,number_of_bedrooms,country,street,city,province,post_code,active)
-VALUES (1,'Speed lamp','description', 'https://images/thumbnail','https://images/cover', 930.61, 6, 4, 8, 'Canada', '536 Namsub Highway', 'Sotboske', 'Quebec', '28142', true),
-(2,'Blank corner','description', 'https://images/thumbnail','https://images/cover', 250.22, 6, 6, 7, 'Canada', '513 Powov Grove', 'Bohbatev', 'Alberta', '44583', true),
-(3,'Habit Mix','description', 'https://images/thumbnail','https://images/cover', 133.51, 0, 5, 6, 'Canada', '1650 Hejio Center', 'Jaebvap', 'Ontario', '38051', true);
+VALUES (1,'Speed lamp','description', 'https://static.dezeen.com/uploads/2020/02/house-in-the-landscape-niko-arcjitect-architecture-residential-russia-houses-khurtin_dezeen_2364_hero-852x479.jpg','https://static.dezeen.com/uploads/2020/02/house-in-the-landscape-niko-arcjitect-architecture-residential-russia-houses-khurtin_dezeen_2364_hero-852x479.jpg', 930.61, 6, 4, 8, 'Canada', '536 Namsub Highway', 'Sotboske', 'Quebec', '28142', true),
+(2,'Blank corner','description', 'https://static.dezeen.com/uploads/2020/02/house-in-the-landscape-niko-arcjitect-architecture-residential-russia-houses-khurtin_dezeen_2364_hero-852x479.jpg','https://static.dezeen.com/uploads/2020/02/house-in-the-landscape-niko-arcjitect-architecture-residential-russia-houses-khurtin_dezeen_2364_hero-852x479.jpg', 250.22, 6, 6, 7, 'Canada', '513 Powov Grove', 'Bohbatev', 'Alberta', '44583', true),
+(3,'Habit Mix','description', 'https://static.dezeen.com/uploads/2020/02/house-in-the-landscape-niko-arcjitect-architecture-residential-russia-houses-khurtin_dezeen_2364_hero-852x479.jpg','https://static.dezeen.com/uploads/2020/02/house-in-the-landscape-niko-arcjitect-architecture-residential-russia-houses-khurtin_dezeen_2364_hero-852x479.jpg', 133.51, 0, 5, 6, 'Canada', '1650 Hejio Center', 'Jaebvap', 'Ontario', '38051', true);
 
 INSERT INTO reservations (start_date, end_date, property_id, guest_id ) 
 VALUES ('2018-09-11', '2018-09-26', 1, 1),
